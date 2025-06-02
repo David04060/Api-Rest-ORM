@@ -1,6 +1,8 @@
 const express = require("express"); 
 const router = express.Router(); 
 const products = require("../controllers/product.controller"); 
+router.get("/bajo-stock", products.bajoStock);
+router.patch("/:id/aumento-stock", products.aumentoStock);
 router.post("/", products.create); 
 router.get("/", products.findAll); 
 router.get("/:id", products.findOne); 
